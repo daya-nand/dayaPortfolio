@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { IoMenu } from "react-icons/io5";
+import MenuOverlay from "./menuOverlay";
 
 const useIsMobile = (breakpoint = 639) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < breakpoint);
@@ -22,11 +23,12 @@ const useIsMobile = (breakpoint = 639) => {
 const Header = () => {
   const headerContent = ["Home", "About", "Skills", "Projects", "Contact"];
   const isMobile = useIsMobile(639); // 👈 yahan hum check kar rahe hain
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <section
       id="home"
-      className="fixed w-full flex justify-between items-center text-center text-white
+      className="realative w-full flex justify-between items-center text-center text-white
       text-[13px] p-4 overflow-x-hidden bg-transparent"
     >
       <div className="ml-4 font-bold text-lg">
@@ -38,7 +40,10 @@ const Header = () => {
       <div className="font-semibold">
         {isMobile ? (
           // 👇 ye sirf 639px ya usse niche show hoga
-          <div className="text-2xl mr-4 cursor-pointer"> <IoMenu /></div>
+          <div className="text-2xl mr-4 cursor-pointer"> <IoMenu 
+          onClick={() => setMenuOpen(true)}
+
+          /></div>
         ) : (
           // 👇 ye sirf large screens me show hoga
           headerContent.map((item, index) => (
@@ -50,6 +55,10 @@ const Header = () => {
               {item}
             </a>
           ))
+        )}
+
+        {menuOpen && (
+          <MenuOverlay onClose={setMenuOpen} />
         )}
       </div>
     </section>
