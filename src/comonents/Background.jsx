@@ -28,7 +28,8 @@ export default function Background({
       ctx.fillStyle = backgroundColor;
       ctx.fillRect(0, 0, width, height);
 
-      // ✨ STEP 2: Draw glowing particles
+      // ✨ STEP 2: Draw glowing 
+      
       ctx.shadowBlur = glow;
       ctx.shadowColor = glowColor;
       ctx.fillStyle = glowColor;

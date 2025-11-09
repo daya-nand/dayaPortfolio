@@ -36,7 +36,7 @@ const FeaturedProjects = () => {
   return (
     <section
       id="projects"
-      className="w-full min-h-screen   text-white flex flex-col items-center py-20 px-6 relative overflow-hidden"
+      className="w-full min-h-screen text-white flex flex-col items-center py-20 px-6 relative overflow-hidden"
     >
       {/* ✨ Title */}
       <div className="text-center mb-12 z-10">
@@ -114,10 +114,7 @@ const FeaturedProjects = () => {
           <ArrowUpRight size={18} />
         </a>
       </div>
-
-      {/* 🌌 Animated background dots (optional aesthetic) */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_2px_2px,_#1e293b_1px,_transparent_0)] bg-[length:20px_20px] opacity-40"></div>
-    </section>
+</section>
   );
 };
 

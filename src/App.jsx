@@ -1,5 +1,6 @@
 
 import Background from './comonents/Background'
+import AboutMe from './sections/AboutMe'
 import FeaturedProjects from './sections/FeaturedProjects'
 import Home from './sections/home'
 import MySkills from './sections/MySkills'
@@ -11,7 +12,7 @@ const App = () => {
       <Home></Home>
       <MySkills></MySkills>
       <FeaturedProjects></FeaturedProjects>
-      {/* <AboutMe></AboutMe> */}
+      <AboutMe></AboutMe>
     </div>
   )
 }
